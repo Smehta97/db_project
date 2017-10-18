@@ -82,5 +82,3 @@ WHERE a.ac_ID=c.ac_ID and r.room_ID=c.room_ID and c.room_ID in (SELECT s.room_ID
 SELECT *
 FROM accomodation a, rooms r, contains c
 WHERE a.ac_ID=c.ac_ID and r.room_ID=c.room_ID and c.cost<100
-
-/**/
