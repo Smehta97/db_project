@@ -25,6 +25,7 @@ CREATE TABLE location(
   country VARCHAR(255),
   PRIMARY KEY(ac_ID),
   FOREIGN KEY(ac_ID) REFERENCES accomodation(ac_ID)
+  ON DELETE CASCADE
 );
 
 CREATE TABLE hotel(
@@ -33,6 +34,7 @@ CREATE TABLE hotel(
   parking BOOLEAN,
   PRIMARY KEY(ac_ID),
   FOREIGN KEY(ac_ID) REFERENCES accomodation(ac_ID)
+  ON DELETE CASCADE
 );
 
 CREATE TABLE hostel(
@@ -41,6 +43,7 @@ CREATE TABLE hostel(
   common_room BOOLEAN,
   PRIMARY KEY(ac_ID),
   FOREIGN KEY(ac_ID) REFERENCES accomodation(ac_ID)
+  ON DELETE CASCADE
 );
 
 CREATE TABLE motel(
@@ -48,6 +51,7 @@ CREATE TABLE motel(
   num_parking INT,
   PRIMARY KEY(ac_ID),
   FOREIGN KEY(ac_ID) REFERENCES accomodation(ac_ID)
+  ON DELETE CASCADE
 );
 
 CREATE TABLE resort(
@@ -57,6 +61,7 @@ CREATE TABLE resort(
   room_service BOOLEAN,
   PRIMARY KEY(ac_ID),
   FOREIGN KEY(ac_ID) REFERENCES accomodation(ac_ID)
+  ON DELETE CASCADE
 );
 
 CREATE TABLE rooms(
@@ -73,12 +78,14 @@ CREATE TABLE single(
   room_ID INT,
   PRIMARY KEY(room_ID),
   FOREIGN KEY(room_ID) REFERENCES rooms(room_ID)
+  ON DELETE CASCADE
 );
 
 CREATE TABLE double_r(
   room_ID INT,
   PRIMARY KEY(room_ID),
   FOREIGN KEY(room_ID) REFERENCES rooms(room_ID)
+  ON DELETE CASCADE
 );
 
 CREATE TABLE studio(
@@ -86,6 +93,7 @@ CREATE TABLE studio(
   kitchen BOOLEAN,
   PRIMARY KEY(room_ID),
   FOREIGN KEY(room_ID) REFERENCES rooms(room_ID)
+  ON DELETE CASCADE
 );
 
 CREATE TABLE dormitory(
@@ -94,6 +102,7 @@ CREATE TABLE dormitory(
   unisex BOOLEAN,
   PRIMARY KEY(room_ID),
   FOREIGN KEY(room_ID) REFERENCES rooms(room_ID)
+  ON DELETE CASCADE
 );
 
 CREATE TABLE suites(
@@ -101,6 +110,7 @@ CREATE TABLE suites(
   types VARCHAR(255),
   PRIMARY KEY(room_ID),
   FOREIGN KEY(room_ID) REFERENCES rooms(room_ID)
+  ON DELETE CASCADE
 );
 
 CREATE TABLE facilities(
@@ -118,6 +128,7 @@ CREATE TABLE restaurant(
   cuisine VARCHAR(255),
   PRIMARY KEY(name),
   FOREIGN KEY(name) REFERENCES facilities(name)
+  ON DELETE CASCADE
 );
 
 CREATE TABLE pool(
@@ -125,6 +136,7 @@ CREATE TABLE pool(
   type CHAR(40),
   PRIMARY KEY(name),
   FOREIGN KEY(name) REFERENCES facilities(name)
+  ON DELETE CASCADE
 );
 
 CREATE TABLE spa(
@@ -134,6 +146,7 @@ CREATE TABLE spa(
   thermal_baths BOOLEAN,
   PRIMARY KEY(name),
   FOREIGN KEY(name) REFERENCES facilities(name)
+  ON DELETE CASCADE
 );
 
 CREATE TABLE gym(
@@ -141,6 +154,7 @@ CREATE TABLE gym(
   classes TEXT,
   PRIMARY KEY(name),
   FOREIGN KEY(name) REFERENCES facilities(name)
+  ON DELETE CASCADE
 );
 
 CREATE TABLE casino(
@@ -149,6 +163,7 @@ CREATE TABLE casino(
   table_games BOOLEAN,
   PRIMARY KEY(name),
   FOREIGN KEY(name) REFERENCES facilities(name)
+  ON DELETE CASCADE
 );
 
 CREATE TABLE rating(
